@@ -10,14 +10,49 @@ publicar em repositório público.
 
 ---
 
-## 0. Instalar a skill
+## Requisitos
 
-A skill é a pasta [`clonar-funil-detectar-cloaking/`](./clonar-funil-detectar-cloaking)
-deste repositório — o Claude Code lê ela antes de agir. Sem ela instalada no
-lugar certo, o prompt-mestre não tem o que executar.
+O que precisa estar instalado na máquina **antes** de usar a skill:
+
+| requisito | pra que serve | como checar |
+|---|---|---|
+| **Node.js 18+** | roda o Claude Code CLI | `node --version` |
+| **Git** | clonar este repo, e algumas ofertas usam `git` internamente | `git --version` |
+| **ffmpeg** | baixar e recomprimir os vídeos das VSLs | `ffmpeg -version` |
+| **Claude Code** | é o agente que lê e executa a skill | `claude --version` |
+| **Conta com acesso a este repo** | ele é privado — precisa ser convidado como colaborador no GitHub | — |
+
+Não precisa instalar nada disso manualmente um por um — o instalador abaixo
+faz tudo de uma vez.
+
+## 0. Instalar tudo do zero
+
+**Opção A — instalador automático** (recomendado, cobre requisitos + skill):
 
 ```bash
 git clone <URL-DESTE-REPO>
+cd clonar-funil-detectar-cloaking
+```
+
+Windows (PowerShell):
+```powershell
+powershell -ExecutionPolicy Bypass -File .\instalar.ps1
+```
+
+macOS / Linux:
+```bash
+bash instalar.sh
+```
+
+O script (`instalar.ps1` / `instalar.sh`) checa Node.js, Git, ffmpeg e o
+Claude Code — instala o que estiver faltando (via `winget` no Windows,
+`brew`/`apt` no Mac/Linux) — e já copia a pasta da skill pro lugar certo.
+
+**Opção B — manual**, se preferir controlar cada passo:
+
+```bash
+git clone <URL-DESTE-REPO>
+npm install -g @anthropic-ai/claude-code
 ```
 
 Copie a pasta `clonar-funil-detectar-cloaking/` inteira para dentro de:
@@ -29,12 +64,13 @@ Copie a pasta `clonar-funil-detectar-cloaking/` inteira para dentro de:
 Confirme que ficaram lá dentro: `SKILL.md`, a pasta `references/` e a pasta
 `scripts/`. Se faltar uma, a cópia ficou incompleta.
 
-Teste abrindo o Claude Code numa pasta de projeto qualquer e digitando
+**Testar:** abra o Claude Code numa pasta de projeto qualquer, rode `claude`
+pra autenticar (abre o navegador na primeira vez), e digite
 `/clonar-funil-detectar-cloaking` — se aparecer no autocomplete, está
 instalada.
 
-Pra manter atualizado depois, é só `git pull` neste repo e copiar a pasta de
-novo (sobrescrevendo).
+Pra manter atualizado depois, é só `git pull` neste repo e rodar o
+instalador de novo (ele sobrescreve a skill com a versão atual).
 
 ---
 
