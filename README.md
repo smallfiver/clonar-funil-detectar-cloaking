@@ -95,6 +95,7 @@ isto é só pra você entender o que está vendo rodar.
 | 06 | **Limpar o tracking** | Remove pixel, UTMs, scripts ofuscados. Grep final confirma zero resíduo. |
 | 07 | **Validar** | Simula a lógica de reveal via JS, confere imagens quebradas e overflow mobile — antes de gastar tempo com deploy. |
 | 08 | **Deploy** | Vercel (presell + oferta), `vercel.json` com SPA rewrite, validação pós-deploy via curl comparando `content-length`. |
+| 8.5 | **Domínio (opcional)** | Pergunta se quer conectar um domínio próprio (ex: Hostinger) antes de mexer em qualquer DNS — nunca automático. Ver `references/dominio-hostinger-vercel.md`. |
 | 09 | **Relatório** | `RELATORIO.md` a partir do template — nenhuma oferta é considerada entregue sem ele. |
 
 ---

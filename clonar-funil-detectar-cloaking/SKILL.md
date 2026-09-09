@@ -106,6 +106,17 @@ Ver `references/deploy-vercel.md` — cobre o limite de 100MB por arquivo
 (que trava o deploy se o vídeo não foi recomprimido a tempo) e como validar
 o deploy publicado via curl em vez de só confiar no "Aliased ✓".
 
+### Passo 8.5: Domínio próprio (opcional) — sempre perguntar antes
+Depois do deploy, a oferta já está no ar em `*.vercel.app`. Conectar um
+domínio próprio (ex: registrado na Hostinger) é opcional — **sempre
+pergunte ao usuário se ele quer conectar um domínio agora antes de fazer
+qualquer configuração de DNS**, nunca decida isso sozinho. Ver
+`references/dominio-hostinger-vercel.md` pro passo a passo completo:
+como pegar os registros DNS certos da Vercel, e as 3 formas de configurar
+do lado da Hostinger dependendo do que estiver disponível na sessão
+(MCP conectado, token de API, ou passar os registros pro usuário colar
+manualmente no hPanel).
+
 ### Passo 9: Escrever o RELATORIO.md
 Copie `references/template-relatorio-oferta.md` pra dentro da pasta da
 oferta como `RELATORIO.md` e preencha cada seção. **Nenhuma oferta está

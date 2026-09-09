@@ -104,6 +104,10 @@ completar pagamento — NUNCA completar uma compra real para descobrir).
 - Presell: {URL}
 - Oferta (VSL): {URL}
 - Checkout: {URL}
+- Domínio próprio conectado (Hostinger)? {Sim / Não — usuário optou por
+  ficar só no `*.vercel.app` / Não perguntado ainda}
+  - Se sim: domínio, registros DNS aplicados, e se foi via API (token) ou
+    configurado manualmente pelo usuário — ver `references/dominio-hostinger-vercel.md`
 
 ## ✏️ Onde editar
 - `presell/src/App.tsx` → `OFFER_URL`
